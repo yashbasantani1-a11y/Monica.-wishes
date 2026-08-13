@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Dear Yashhi 💗</title>
+
+<style>
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  min-height:100%;
+}
+
+body{
+  font-family:Georgia,"Times New Roman",serif;
+  background:radial-gradient(circle at 50% 20%,#fff8fc,#ffeef6 45%,#f8dce9);
+  color:#6b2947;
+  overflow:hidden;
+}
+
+#hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.heart{
+  position:absolute;
+  bottom:-30px;
+  animation:float 7s linear infinite;
+  opacity:.6;
+}
+
+@keyframes float{
+  0%{
+    transform:translateY(0) scale(.7);
+    opacity:0
+  }
+  15%{opacity:.7}
+  85%{opacity:.6}
+  100%{
+    transform:translateY(-110vh) scale(1.2) rotate(20deg);
+    opacity:0
+  }
+}
+
+.screen{
+  min-height:100vh;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.screen.active{
+  display:flex;
+}
+
+.card{
+  width:min(430px,94vw);
+  padding:30px 24px;
+  background:rgba(255,255,255,.82);
+  border-radius:30px;
+  box-shadow:0 20px 60px rgba(120,35,72,.15);
+  backdrop-filter:blur(10px);
+}
+
+.small{
+  font-size:14px;
+  opacity:.7;
+}
+
+.tap{
+  font-size:14px;
+  opacity:.7;
+}
+
+h1{
+  font-size:32px;
+  margin:12px 0;
+}
+
+p{
+  font-size:18px;
+  line-height:1.65;
+  margin:12px 0 22px;
+}
+
+.animal{
+  font-size:105px;
+  line-height:1;
+  margin:8px 0 15px;
+}
+
+.flower{
+  font-size:85px;
+  margin:5px 0;
+}
+
+.bouquet{
+  font-size:75px;
+  margin:5px;
+}
+
+button{
+  border:0;
+  border-radius:999px;
+  padding:13px 25px;
+  font-size:16px;
+  font-family:inherit;
+  color:white;
+  background:linear-gradient(135deg,#e85b8d,#b83f6b);
+  box-shadow:0 8px 22px rgba(184,63,107,.25);
+  cursor:pointer;
+}
+
+.gift{
+  width:170px;
+  height:135px;
+  margin:20px auto 12px;
+  position:relative;
+  cursor:pointer;
+  animation:breathe 2s ease-in-out infinite;
+}
+
+@keyframes breathe{
+  50%{transform:translateY(-6px)}
+}
+
+.box{
+  position:absolute;
+  left:15px;
+  right:15px;
+  bottom:0;
+  height:90px;
+  background:#f58bb2;
+  border-radius:8px;
+}
+
+.lid{
+  position:absolute;
+  left:5px;
+  right:5px;
+  top:22px;
+  height:27px;
+  background:#ff9dc0;
+  border-radius:7px;
+  z-index:2;
+}
+
+.ribbon-v{
+  position:absolute;
+  width:24px;
+  top:22px;
+  bottom:0;
+  left:73px;
+  background:#fff0a8;
+  z-index:3;
+}
+
+.ribbon-bow{
+  position:absolute;
+  top:0;
+  left:60px;
+  width:50px;
+  height:35px;
+  z-index:4;
+}
+
+.ribbon-bow:before,
+.ribbon-bow:after{
+  content:"";
+  position:absolute;
+  width:34px;
+  height:25px;
+  background:#fff0a8;
+  border-radius:80% 15%;
+  top:4px;
+}
+
+.ribbon-bow:before{
+  left:-9px;
+  transform:rotate(25deg);
+}
+
+.ribbon-bow:after{
+  right:-9px;
+  transform:scaleX(-1) rotate(25deg);
+}
+
+.final h1{
+  color:#a92f5d;
+  font-size:36px;
+}
+
+.signature{
+  margin-top:25px;
+  font-size:16px;
+  opacity:.75;
+}
+</style>
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+
+<!-- PAGE 1 -->
+
+<section class="screen active" id="s1">
+
+<div class="card">
+
+<div class="small">
+A tiny surprise for you ♡
+</div>
+
+<div class="gift" onclick="next(2)">
+
+<div class="ribbon-bow"></div>
+<div
