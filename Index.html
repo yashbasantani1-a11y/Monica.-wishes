@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dear Monica 💗</title>
+
+<style>
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  min-height:100%;
+}
+
+body{
+  font-family:Georgia,"Times New Roman",serif;
+  background:radial-gradient(circle at 50% 20%,#fff8fc,#ffeef6 45%,#f8dce9);
+  color:#6b2947;
+  overflow:hidden;
+}
+
+.hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.heart{
+  position:absolute;
+  bottom:-30px;
+  animation:float 7s linear infinite;
+  opacity:.6;
+}
+
+@keyframes float{
+  0%{transform:translateY(0) scale(.7);opacity:0}
+  15%{opacity:.7}
+  85%{opacity:.6}
+  100%{transform:translateY(-110vh) scale(1.2) rotate(20deg);opacity:0}
+}
+
+.screen{
+  min-height:100vh;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.screen.active{
+  display:flex;
+}
+
+.card{
+  width:min(430px,94vw);
+  padding:30px 24px;
+  background:rgba(255,255,255,.82);
+  border-radius:30px;
+  box-shadow:0 20px 60px rgba(120,35,72,.15);
+  backdrop-filter:blur(10px);
+}
+
+.small{
+  font-size:13px;
+  opacity:.7;
+}
+
+h1{
+  font-size:32px;
+  margin:12px 0;
+}
+
+p{
+  font-size:18px;
+  line-height:1.65;
+  margin:12px 0 22px;
+}
+
+.animal{
+  font-size:105px;
+  line-height:1;
+  margin:8px 0 15px;
+}
+
+.flower{
+  font-size:85px;
+  margin:5px 0;
+}
+
+.bouquet{
+  font-size:75px;
+  margin:5px;
+}
+
+button{
+  border:0;
+  border-radius:999px;
+  padding:13px 25px;
+  font-size:16px;
+  font-family:inherit;
+  color:white;
+  background:linear-gradient(135deg,#e85b8d,#b83f6b);
+  box-shadow:0 8px 22px rgba(184,63,107,.25);
+}
+
+.tap{
+  font-size:14px;
+  opacity:.65;
+}
+
+/* Gift */
+
+.gift{
+  width:170px;
+  height:135px;
+  margin:20px auto 12px;
+  position:relative;
+  cursor:pointer;
+  animation:breathe 2s ease-in-out infinite;
+}
+
+@keyframes breathe{
+  50%{transform:translateY(-6px)}
+}
+
+.box{
+  position:absolute;
+  left:15px;
+  right:15px;
+  bottom:0;
+  height:90px;
+  background:#f58bb2;
+  border-radius:8px;
+}
+
+.lid{
+  position:absolute;
+  left:5px;
+  right:5px;
+  top:22px;
+  height:27px;
+  background:#ff9dc0;
+  border-radius:7px;
+  z-index:2;
+}
+
+.ribbon-v{
+  position:absolute;
+  width:24px;
+  top:22px;
+  bottom:0;
+  left:73px;
+  background:#fff0a8;
+  z-index:3;
+}
+
+.ribbon-bow{
+  position:absolute;
+  top:0;
+  left:60px;
+  width:50px;
+  height:35px;
+  z-index:4;
+}
+
+.ribbon-bow:before,
+.ribbon-bow:after{
+  content:"";
+  position:absolute;
+  width:34px;
+  height:25px;
+  background:#fff0a8;
+  border-radius:80% 15%;
+  top:4px;
+}
+
+.ribbon-bow:before{
+  left:-9px;
+  transform:rotate(25deg);
+}
+
+.ribbon-bow:after{
+  right:-9px;
+  transform:scaleX(-1) rotate(25deg);
+}
+
+.final h1{
+  color:#a92f5d;
+  font-size:36px;
+}
+
+.signature{
+  margin-top:25px;
+  font-size:16px;
+  opacity:.75;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<!-- FIRST PAGE -->
+<section class="screen active" id="s1">
+<div class="card">
+
+<div class="small">A tiny surprise for you ♡</div>
+
+<div class="gift" onclick="next(2)">
+  <div class="ribbon-bow"></div>
+  <div class="lid"></div>
+  <div class="ribbon-v"></div>
+  <div class="box"></div>
+</div>
+
+<h1>My Dear Monica 💗</h1>
+
+<div class="tap">(tap the gift to open)</div>
+
+</div>
+</section>
+
+
+<!-- SECOND PAGE -->
+<section class="screen" id="s2">
+<div class="card">
+
+<div class="animal">🐶</div>
+
+<h1>My Dear Monica 🥹</h1>
+
+<p>
+I wanted to give you something small…
+just to remind you how genuinely special
+and precious you are.
+</p>
+
+<button onclick="next(3)">Next →</button>
+
+</div>
+</section>
+
+
+<!-- THIRD PAGE -->
+<section class="screen" id="s3">
+<div class="card">
+
+<div class="animal">🐱</div>
+
+<h1>For The Strongest Woman I Know 🐾</h1>
+
+<p>
+This little one has one very important job…
+to remind you that you deserve softness,
+kindness, respect and all the love in the world. 🌷
+</p>
+
+<button onclick="next(4)">Keep going ♡</button>
+
+</div>
+</section>
+
+
+<!-- FOURTH PAGE -->
+<section class="screen" id="s4">
+<div class="card">
+
+<div class="flower">🌷</div>
+
+<div class="bouquet">💐</div>
+
+<h1>For Your Beautiful Soul, Monica 🌸</h1>
+
+<p>
+You have a strength that deserves to be admired.
+Whatever life puts in front of you,
+I hope you never forget how strong,
+valuable and beautiful your heart is.
+</p>
+
+<button onclick="next(5)">One last thing…</button>
+
+</div>
+</section>
+
+
+<!-- FINAL PAGE -->
+<section class="screen" id="s5">
+<div class="card">
+
+<div class="animal">🐶💗🐱</div>
+
+<h1>Keep Being The Strong Woman You Are. ❤️</h1>
+
+<p>
+No matter where life takes you,
+I hope you always remember this:
+
+You are precious.
+You are appreciated.
+You deserve kindness, respect, peace
+and genuine love.
+
+You don't have to prove your strength
+to anyone — the strength you carry
+already says enough.
+</p>
+
+<div class="flower">🌸</div>
+
+<div class="signature">
+For My Dear Monica, with love and respect ♡
+</div>
+
+</div>
+</section>
+
+
+<script>
+
+function next(n){
+
+  document.querySelectorAll(".screen")
+  .forEach(s => s.classList.remove("active"));
+
+  document.getElementById("s"+n)
+  .classList.add("active");
+
+  burst();
+}
+
+
+function burst(){
+
+  for(let i=0;i<14;i++){
+
+    const e=document.createElement("div");
+
+    e.textContent=
+      ["💗","💕","🌸","✨","💖"]
+      [Math.floor(Math.random()*5)];
+
+    e.style.position="fixed";
+    e.style.left=(45+Math.random()*10)+"vw";
+    e.style.top=(45+Math.random()*10)+"vh";
+    e.style.fontSize=(15+Math.random()*18)+"px";
+    e.style.zIndex=10;
+    e.style.pointerEvents="none";
+
+    document.body.appendChild(e);
+
+    const x=(Math.random()-.5)*300;
+    const y=(Math.random()-.5)*300;
+
+    e.animate(
+      [
+        {
+          transform:"translate(0,0) scale(.5)",
+          opacity:1
+        },
+        {
+          transform:`translate(${x}px,${y}px) scale(1.3)`,
+          opacity:0
+        }
+      ],
+      {
+        duration:900,
+        easing:"ease-out"
+      }
+    ).onfinish=()=>e.remove();
+  }
+}
+
+
+/* Floating hearts */
+
+for(let i=0;i<18;i++){
+
+  const h=document.createElement("div");
+
+  h.className="heart";
+
+  h.textContent=
+    ["♡","♥","💗","💕"]
+    [Math.floor(Math.random()*4)];
+
+  h.style.left=Math.random()*100+"vw";
+
+  h.style.animationDelay=
+    Math.random()*7+"s";
+
+  h.style.animationDuration=
+    (5+Math.random()*5)+"s";
+
+  h.style.fontSize=
+    (12+Math.random()*18)+"px";
+
+  document.getElementById("hearts")
+  .appendChild(h);
+}
+
+</script>
+
+</body>
+  </html>
